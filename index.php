@@ -13,6 +13,8 @@
     <a href="./lab6/lab6.php">lab6</a>
     <br>
     <a href="./lab7/lab7.php">lab7</a>
+    <br>
+    <a href="./lab8/lab8.php">lab8</a>
 </body>
 
 </html>
