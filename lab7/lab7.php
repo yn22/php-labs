@@ -58,7 +58,7 @@
 <body>
     <div class="container">
         <label>Пошук</label>
-        <input type="text" id="id-search" onkeypress="handleKeyPress(event);"></input>
+        <input type="text" id="id-search" onkeyup="handleKeyPress(event)" onchange="handleKeyPress(event)"></input>
         <div class="loader" style="display: none;"></div>
 
         <div id="search_results"></div>
