@@ -1,6 +1,6 @@
 <?php
 define('MAILGUN_URL', getenv('MAILGUN_URL'));
-define('MAILGUN_API_KEY', getenv('MAILGUN_KEY'));
+define('MAILGUN_API_KEY', getenv('MAILGUN_API_KEY'));
 define('MAILGUN_DOMAIN', getenv('MAILGUN_DOMAIN'));
 
 $sender_name = $_POST['sender_name'];
