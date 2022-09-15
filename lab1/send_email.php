@@ -1,6 +1,7 @@
 <?php
-define('MAILGUN_URL', 'https://app.mailgun.com/app/sending/domains/sandboxa55e27481a864759aad1db43ea0d99ee.mailgun.org');
-define('MAILGUN_KEY', 'ddf6643d1174d7d47b310e18f36aaffd-680bcd74-a525d2c1');
+define('MAILGUN_URL', getenv('MAILGUN_URL'));
+define('MAILGUN_API_KEY', getenv('MAILGUN_KEY'));
+define('MAILGUN_DOMAIN', getenv('MAILGUN_DOMAIN'));
 
 $sender_name = $_POST['sender_name'];
 $sender_email = $_POST['sender_email'];
@@ -13,7 +14,7 @@ Message: $message";
 echo $text;
 
 $array_data = [
-    'from' => 'Mailgun <mailgun@sandboxa55e27481a864759aad1db43ea0d99ee>',
+    'from' => 'Mailgun <mailgun@' . MAILGUN_DOMAIN . '>',
     'to' => 'yaroslav.naz14@gmail.com',
     'subject' => 'SUBJECT',
     'text' => $text,
@@ -24,9 +25,9 @@ $array_data = [
     // 'h:Reply-To' => 'YOUR@EMAIL.COM'
 ];
 
-$session = curl_init('https://api.mailgun.net/v3/sandboxa55e27481a864759aad1db43ea0d99ee.mailgun.org/messages');
+$session = curl_init(MAILGUN_URL);
 curl_setopt($session, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
-curl_setopt($session, CURLOPT_USERPWD, 'api:ddf6643d1174d7d47b310e18f36aaffd-680bcd74-a525d2c1');
+curl_setopt($session, CURLOPT_USERPWD, 'api:' . MAILGUN_API_KEY);
 curl_setopt($session, CURLOPT_POST, true);
 curl_setopt($session, CURLOPT_POSTFIELDS, $array_data);
 curl_setopt($session, CURLOPT_HEADER, false);
