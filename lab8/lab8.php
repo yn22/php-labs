@@ -19,14 +19,12 @@
             });
 
             function handleChange() {
+                $("#message").hide();
                 delayTimer = setTimeout(function() {
                     const ip = $("#ip").val();
                     const ipRegex = /^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
                     if (!ipRegex.test(ip)) {
-                        $("#ip").css("border", "1px solid red");
-                        $("#ip").css("background-color", "pink");
-                        $("#ip").css("color", "red");
-                        $("#ip").val("Invalid IP");
+                        $("#message").show();
                         return;
                     }
                     $.get("handle_request.php", {
@@ -48,6 +46,7 @@
     <form>
         <label for="ip">IP Address:</label>
         <input type="text" name="ip" id="ip" pattern="^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$" onkeydown="handleChange(event);">
+        <p id="message" style="color: red;" hidden>Invalid IP</p>
     </form>
     <div id="result"></div>
 </body>
