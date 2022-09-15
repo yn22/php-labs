@@ -1,0 +1,40 @@
+@font-face {
+    font-family: Satoshi-Regular;
+    src: url(../fonts/Satoshi-Regular.otf);
+  }
+body {
+    font-family: Satoshi-Regular;
+}
+
+h2, h3, p {
+    margin: 0;
+}
+
+h3 {
+    font-weight: 500;
+}
+
+h2 {
+    color: #1a1a1a;
+}
+
+.deep-gray {
+    background-color: #1a1a1a;
+    color: rgb(223, 223, 223);
+}
+
+.container {
+    width: 75%;
+    max-width: 1170px;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: flex-start;
+    min-width: 850px;
+}
+
+.card {
+    box-shadow: 0 4px 10px 0 rgb(0 0 0 / 20%), 0 4px 20px 0 rgb(0 0 0 / 19%);;
+    background-color: #757575;
+    color: black;
+}

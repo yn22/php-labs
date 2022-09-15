@@ -1,0 +1,125 @@
+.main > * , .contact-overview > div {
+    box-shadow: 0 4px 10px 0 rgb(0 0 0 / 20%), 0 4px 20px 0 rgb(0 0 0 / 19%);;
+    background-color: #757575;
+    margin: 5px;
+}
+
+.personal-info {
+    margin-top: 0px !important; 
+}
+
+.bottom-left {
+    position: absolute;
+    left: 11px;
+    bottom: 19px;
+    font-size: 29px;
+}
+
+.fourth {
+    width: 25%;
+}
+
+.three-fourth {
+    width: 75%;
+}
+
+.transparent {
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.contact-info-item {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;    
+    justify-content: flex-start;
+    padding: 5px;
+}
+
+
+.contact-info-item  img {
+    width: 15px;
+    height: 15px;
+    margin-right: 10px;
+}
+
+.main img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.main h2 {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+
+.vertical-container {
+    display: flex;
+    align-items: stretch;
+    flex-flow: column nowrap;
+}
+
+.vertical-container > *{
+    padding: 5px;
+}
+
+.divider {
+    line-height: 0;
+    margin: 0 5px;
+    border-bottom: 1px solid #1a1a1a;
+    padding: 0px;
+    box-shadow: 0 4px 10px 0 rgb(0 0 0 / 20%), 0 4px 20px 0 rgb(0 0 0 / 19%);;
+}
+
+.personal-info > h2, .personal-info > h3 {
+    margin: 5px;
+}
+
+.email-me {
+    flex-flow: column nowrap;
+    align-items: flex-start;
+}
+
+.email-me > h2 {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+
+.email-me > * {
+    margin: 5px;
+}
+
+.email > input, .email > textarea {
+    width: calc(100% - 10px);
+    padding: 7px 10px;
+    margin: 4px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.email > textarea {
+    height: 150px;
+}
+
+.email {
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+}
+
+.email > button {
+    margin-top: 5px;
+    width: 100px;
+}
+
+button {
+    background-color: #ccc;
+    border: none;
+    box-shadow: 0 4px 10px 0 rgb(0 0 0 / 20%), 0 4px 20px 0 rgb(0 0 0 / 19%);;
+    padding: 5px 10px;
+}
