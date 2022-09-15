@@ -118,7 +118,7 @@
                 <h3 class="medium-gray">
                     <a href="./lab7/lab7.php">Lab 7</a>
                 </h3>
-                <p class="medium-gray">Enable to look up the data from santehtochka.com.ua website by given keyword.</p>
+                <p class="medium-gray">Enables to look up the data from santehtochka.com.ua website by given keyword.</p>
                 <div class="divider"></div>
                 <h3 class="medium-gray">
                     <a href="./lab8/lab8.php">Lab 8</a>
