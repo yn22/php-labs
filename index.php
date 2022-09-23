@@ -57,6 +57,7 @@
                         <label for="id-message">Your message</label>
                         <textarea id="id-message" required></textarea>
                         <button id="id-send-button" type="submit">Send</button>
+                        <p>*You may need to check the spam folder</p>
 
                         <p style="margin-top: 5px;" class="email-sent-message" hidden>The message was sent.</p>
                     </div>

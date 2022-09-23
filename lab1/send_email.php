@@ -7,17 +7,13 @@ $sender_name = $_POST['sender_name'];
 $sender_email = $_POST['sender_email'];
 $message = $_POST['message'];
 
-$text = "Sender name: $sender_name
-Sender email: $sender_email
-Message: $message";
-
 echo $text;
 
 $array_data = [
     'from' => 'Mailgun <mailgun@' . MAILGUN_DOMAIN . '>',
-    'to' => 'yaroslav.naz14@gmail.com',
-    'subject' => 'SUBJECT',
-    'text' => $text,
+    'to' => $sender_email,
+    'subject' => 'A message from ' . $sender_name,
+    'text' => $message,
     'o:tracking' => 'yes',
     'o:tracking-clicks' => 'yes',
     'o:tracking-opens' => 'yes'
