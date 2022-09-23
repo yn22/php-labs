@@ -1,7 +1,6 @@
 {
     "require": {
         "ext-gd": "*",
-        "mailgun/mailgun-php": "~1.7.1",
         "symfony/http-client": "^6.1",
         "nyholm/psr7": "^1.5"
     },
