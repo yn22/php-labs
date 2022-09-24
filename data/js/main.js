@@ -21,7 +21,7 @@ function handleEmailSend(event) {
       if (response.ok) {
         alert("Email was sent successfully");
       } else {
-        alert("An error has occure while sending email");
+        alert("An error has occured while sending email");
       }
     })
     .finally(() => {
