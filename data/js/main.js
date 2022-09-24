@@ -19,9 +19,9 @@ function handleEmailSend(event) {
     .then((response) => {
       emailSentMessage.classList.remove("hidden");
       if (response.ok) {
-        alert("Email sent successfully");
+        alert("Email was sent successfully");
       } else {
-        alert("Error sending email");
+        alert("An error has occure while sending email");
       }
     })
     .finally(() => {

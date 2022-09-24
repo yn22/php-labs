@@ -1,34 +1,43 @@
 <?php
-define('MAILGUN_URL', getenv('MAILGUN_URL'));
-define('MAILGUN_API_KEY', getenv('MAILGUN_API_KEY'));
-define('MAILGUN_DOMAIN', getenv('MAILGUN_DOMAIN'));
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require "../vendor/autoload.php";
+
+define('EMAIL', getenv('EMAIL'));
+define('EMAIL_PASSWORD', getenv('EMAIL_PASSWORD'));
 
 $sender_name = $_POST['sender_name'];
 $sender_email = $_POST['sender_email'];
 $message = $_POST['message'];
 
-echo $text;
+$mail = new PHPMailer();
+$mail->IsSMTP();
+$mail->Mailer = "smtp";
 
-$array_data = [
-    'from' => 'Mailgun <mailgun@' . MAILGUN_DOMAIN . '>',
-    'to' => $sender_email,
-    'subject' => 'A message from ' . $sender_name,
-    'text' => $message,
-    'o:tracking' => 'yes',
-    'o:tracking-clicks' => 'yes',
-    'o:tracking-opens' => 'yes'
-    //'o:tag'=>$tag,
-    // 'h:Reply-To' => 'YOUR@EMAIL.COM'
-];
+$mail->SMTPDebug  = 1;
+$mail->SMTPAuth   = true;
+$mail->SMTPSecure = "tls";
+$mail->Port       = 465;
+$mail->Host       = "smtp.gmail.com";
+$mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+$mail->Username   = EMAIL;
+$mail->Password   = EMAIL_PASSWORD;
 
-$session = curl_init(MAILGUN_URL);
-curl_setopt($session, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
-curl_setopt($session, CURLOPT_USERPWD, 'api:' . MAILGUN_API_KEY);
-curl_setopt($session, CURLOPT_POST, true);
-curl_setopt($session, CURLOPT_POSTFIELDS, $array_data);
-curl_setopt($session, CURLOPT_HEADER, false);
-curl_setopt($session, CURLOPT_ENCODING, 'UTF-8');
-curl_setopt($session, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($session, CURLOPT_SSL_VERIFYPEER, false);
-$response = curl_exec($session);
-curl_close($session);
+$mail->IsHTML(true);
+$mail->AddAddress($sender_email, $sender_name);
+$mail->SetFrom("yaroslav.nazarenko.phplabs@gmail.com", "Yaroslav");
+// $mail->AddReplyTo("yaroslav.nazarenko.phplabs@gmail.com", "Yaroslav");
+$mail->Subject = "A message from " . $sender_name;
+$content = $message;
+
+$mail->MsgHTML($content);
+if (!$mail->Send()) {
+    echo "Error while sending Email.";
+    http_response_code(500);
+    echo "Mailer Error: " . $mail->ErrorInfo;
+} else {
+    http_response_code(200);
+    echo "Email sent successfully";
+}
