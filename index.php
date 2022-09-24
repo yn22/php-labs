@@ -114,7 +114,7 @@
                 <h3 class="medium-gray">
                     <a href="./lab6/lab6.php">Lab 6</a>
                 </h3>
-                <p class="medium-gray">Displays weather info for city of Kharkiv for the current date, parsed from Gismeteo website as an image.</p>
+                <p class="medium-gray">Displays weather info for ceveral cities for the current date, parsed from Gismeteo website in a form of images.</p>
                 <div class="divider"></div>
                 <h3 class="medium-gray">
                     <a href="./lab7/lab7.php">Lab 7</a>
