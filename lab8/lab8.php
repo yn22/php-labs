@@ -10,17 +10,18 @@
         let delayTimer;
 
         $(document).ready(function() {
+            getServerIP();
 
-            $("#ip").on("change", function() {
+            $("#ip").on("input", function() {
                 handleChange();
             });
-            $("#ip").on("keyup", function() {
-                handleChange();
-            });
+
 
             function handleChange() {
                 $("#message").hide();
+                clearTimeout(delayTimer);
                 delayTimer = setTimeout(function() {
+                    console.log("delayed");
                     const ip = $("#ip").val();
                     const ipRegex = /^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
                     if (!ipRegex.test(ip)) {
@@ -36,6 +37,13 @@
                         $("#ip").css("color", "");
                     });
                 }, 1000);
+            }
+
+            function getServerIP() {
+                $.get("get_server_ip.php", function(data) {
+                    $("#ip").val(data);
+                    $("#ip").trigger("change");
+                });
             }
         });
     </script>

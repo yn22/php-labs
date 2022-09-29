@@ -1,7 +1,6 @@
 <?php
 include 'IPInfo.php';
-
-$ip = $_GET['ip'];
+$ip = $_GET['ip'] ?? $_SERVER['REMOTE_ADDR'];
 $ipInfo = new IPInfo($ip);
 
 echo "<p>IP Details for " . $ipInfo->ip . "</p>";
