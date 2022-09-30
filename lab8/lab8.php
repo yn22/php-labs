@@ -12,10 +12,13 @@
         $(document).ready(function() {
             getServerIP();
 
-            $("#ip").on("change", function() {
+            $("#ip").on("input", function() {
                 handleChange();
             });
 
+            $("#ip").on("change", function() {
+                handleChange();
+            });
 
             function handleChange() {
                 $("#message").hide();
