@@ -34,7 +34,6 @@ function renderWeatherInfoToImg($weather_info)
 
     $sunset_seconds = (int)explode(":", $sunset)[0] * 3600 + (int)explode(":", $sunset)[1] * 60;
 
-
     $left_percent = (int)($sunrise_seconds * 100 / (24 * 3600));
     $left_point = (int)($left_percent * 1000 / 100);
 
@@ -45,9 +44,9 @@ function renderWeatherInfoToImg($weather_info)
 
     $center_point = $right_point - $left_point - 50;
 
-    imagecopyresized($im, $left, $left_point, 0, 0, 0, 50, 500, 100, 100);
-    imagecopyresized($im, $right, $right_point, 0, 0, 0, 50, 500, 100, 100);
-    imagecopyresized($im, $center, $left_point + 50, 0, 0, 0, $center_point, 500, 100, 100);
+    imagecopyresized($im, $left, $left_point, 0, 0, 0, 50, 445, 100, 100);
+    imagecopyresized($im, $right, $right_point, 0, 0, 0, 50, 445, 100, 100);
+    imagecopyresized($im, $center, $left_point + 50, 0, 0, 0, $center_point, 445, 100, 100);
 
     $temperature = $weather_info->temperature_during_day_as_array;
     $i = 5;
