@@ -1,14 +1,22 @@
 <html>
 
+<head>
+    <style>
+        div {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
 <body>
-    Погода в містах України:<br>
-    <img src="pogoda.php?city=kharkiv-5053"><br>
-    <img src="pogoda.php?city=kyiv-4944"><br><br>
-    <img src="pogoda.php?city=donetsk-5080"><br>
-    <img src="pogoda.php?city=dnipro-5077"><br>
-    Погода у світі:<br>
-    <img src="pogoda.php?city=moscow-4368"><br>
-    <img src="pogoda.php?city=tampere-471"><br>
-    <img src="pogoda.php?city=london-744"><br>
-    <img src="pogoda.php?city=barcelona-1948"><br>
+    Погода в містах України:
+    <div><img src="pogoda.php?city=kharkiv-5053"></div>
+    <div><img src="pogoda.php?city=kyiv-4944"></div>
+    <div><img src="pogoda.php?city=donetsk-5080"></div>
+    <div><img src="pogoda.php?city=dnipro-5077"></div>
+    <div>Погода у світі:</div>
+    <div><img src="pogoda.php?city=moscow-4368"></div>
+    <div><img src="pogoda.php?city=tampere-471"></div>
+    <div><img src="pogoda.php?city=london-744"></div>
+    <div><img src="pogoda.php?city=barcelona-1948"></div>
 </body>
