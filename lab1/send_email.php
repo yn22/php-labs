@@ -28,7 +28,6 @@ $mail->Password   = EMAIL_PASSWORD;
 $mail->IsHTML(true);
 $mail->AddAddress($sender_email, $sender_name);
 $mail->SetFrom("yaroslav.nazarenko.phplabs@gmail.com", "Yaroslav");
-// $mail->AddReplyTo("yaroslav.nazarenko.phplabs@gmail.com", "Yaroslav");
 $mail->Subject = "A message from " . $sender_name;
 $content = $message;
 

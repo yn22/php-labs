@@ -9,7 +9,7 @@ function getIPAddress()
     elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
         $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
     }
-    //whether ip is from the remote address  
+    //whether ip is from the remote address
     else {
         $ip = $_SERVER['REMOTE_ADDR'];
     }

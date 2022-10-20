@@ -11,5 +11,4 @@
             "Mailgun\\": "vendor/mailgun/mailgun-php/src/"
         }
     }
-    
 }
